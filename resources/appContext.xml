@@ -11,4 +11,8 @@
           class="spring_intro.Dog">
     </bean>
 
+    <bean id="catPet"
+          class="spring_intro.Cat">
+    </bean>
+
 </beans>
