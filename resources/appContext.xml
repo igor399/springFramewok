@@ -16,6 +16,8 @@
           class="spring_intro.Person">
         <!--        <constructor-arg ref="idPet"/>-->
         <property name="pet" ref="idPet"/>
+        <property name="surName" value="Chebotkov"/>
+        <property name="age" value="30"/>
     </bean>
 
 
