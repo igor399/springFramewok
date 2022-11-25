@@ -1,11 +1,13 @@
 package spring_intro;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("idPerson")
 public class Person {
-    @Autowired
+//    @Autowired
+//    @Qualifier("idDog")
     private Pet pet;
     private String surName;
     private int age;
@@ -14,13 +16,14 @@ public class Person {
         System.out.println(">>>non-arg constr using<<<");
     }
 
-//    @Autowired
-//    public Person(Pet pet) {
-//        this.pet = pet;
-//        System.out.println(">>>person constr created<<<");
-//    }
+    @Autowired
+    public Person(@Qualifier("idCat") Pet pet) {
+        this.pet = pet;
+        System.out.println(">>>person constr created<<<");
+    }
 
 //    @Autowired
+//    @Qualifier("idCat")
     public void setPet(Pet pet) {    //you can use autowired annotation not only for setter
         System.out.println(">>>setter is using by spring container<<<");
         this.pet = pet;
