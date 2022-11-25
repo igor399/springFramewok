@@ -5,13 +5,14 @@ import org.springframework.stereotype.Component;
 
 @Component("idPerson")
 public class Person {
+    @Autowired
     private Pet pet;
     private String surName;
     private int age;
 
-//    public Person() {
-//        System.out.println(">>>non-arg constr using<<<");
-//    }
+    public Person() {
+        System.out.println(">>>non-arg constr using<<<");
+    }
 
 //    @Autowired
 //    public Person(Pet pet) {
@@ -19,7 +20,7 @@ public class Person {
 //        System.out.println(">>>person constr created<<<");
 //    }
 
-    @Autowired
+//    @Autowired
     public void setPet(Pet pet) {    //you can use autowired annotation not only for setter
         System.out.println(">>>setter is using by spring container<<<");
         this.pet = pet;
