@@ -9,18 +9,18 @@ public class Person {
     private String surName;
     private int age;
 
-    public Person() {
-        System.out.println(">>>non-arg constr using<<<");
-    }
+//    public Person() {
+//        System.out.println(">>>non-arg constr using<<<");
+//    }
 
+//    @Autowired
+//    public Person(Pet pet) {
+//        this.pet = pet;
+//        System.out.println(">>>person constr created<<<");
+//    }
 
     @Autowired
-    public Person(Pet pet) {
-        this.pet = pet;
-        System.out.println(">>>person constr created<<<");
-    }
-
-    public void setPet(Pet pet) {
+    public void setPet(Pet pet) {    //you can use autowired annotation not only for setter
         System.out.println(">>>setter is using by spring container<<<");
         this.pet = pet;
     }
