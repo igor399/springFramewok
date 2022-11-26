@@ -11,6 +11,8 @@ public class Test6 {
 //        System.out.println(cat1 == cat2);
 
         Person person = context.getBean("idPerson", Person.class);
+        System.out.println(person.getSurName());
+        System.out.println(person.getAge());
         person.callYourPet();
         context.close();
     }
