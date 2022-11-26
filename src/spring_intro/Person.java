@@ -10,9 +10,9 @@ public class Person {
 //    @Autowired
 //    @Qualifier("idDog")
     private Pet pet;
-    @Value("${person.surname}")
+//    @Value("${person.surname}")
     private String surName;
-    @Value("${person.age}")
+//    @Value("${person.age}")
     private int age;
 
     public Person() {
@@ -20,7 +20,7 @@ public class Person {
     }
 
     @Autowired
-    public Person(@Qualifier("idCat") Pet pet) {
+    public Person(@Qualifier("idDog") Pet pet) {
         this.pet = pet;
         System.out.println(">>>person constr created<<<");
     }

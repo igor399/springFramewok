@@ -18,13 +18,13 @@ public class Dog implements Pet {
         System.out.println("Bow-wow");
     }
 
-    @PostConstruct
-    public void init() {
-        System.out.println("init method");
-    }
-
-    @PreDestroy
-    public void destroy() {
-        System.out.println("destroy method");
-    }
+//    @PostConstruct
+//    public void init() {
+//        System.out.println("init method");
+//    }
+//
+//    @PreDestroy
+//    public void destroy() {
+//        System.out.println("destroy method");
+//    }
 }
