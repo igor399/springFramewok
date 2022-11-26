@@ -2,7 +2,7 @@ package spring_intro;
 
 import org.springframework.stereotype.Component;
 
-@Component("idCat")
+//@Component("idCat")
 public class Cat implements Pet {
     public Cat() {
         System.out.println(">>>cat constr created<<<");
@@ -10,6 +10,6 @@ public class Cat implements Pet {
 
     @Override
     public void say() {
-        System.out.println("Meow-mew");
+        System.out.println("meow-meow");
     }
 }

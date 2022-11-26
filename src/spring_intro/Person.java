@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component("idPerson")
+//@Component("idPerson")
 public class Person {
 //    @Autowired
 //    @Qualifier("idDog")
@@ -19,8 +19,8 @@ public class Person {
         System.out.println(">>>non-arg constr using<<<");
     }
 
-    @Autowired
-    public Person(@Qualifier("idDog") Pet pet) {
+
+    public Person( Pet pet) {
         this.pet = pet;
         System.out.println(">>>person constr created<<<");
     }
