@@ -1,7 +1,8 @@
 package aop;
 
-import aop.bean.SchoolLibrary;
-import aop.bean.UniLibrary;
+import aop.beans.Book;
+import aop.beans.SchoolLibrary;
+import aop.beans.UniLibrary;
 import aop.config.MyConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,10 +11,11 @@ public class Test1 {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
         UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
         SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
-        schoolLibrary.getBook();
-        uniLibrary.getBook();
-        uniLibrary.getMagazine();
-        uniLibrary.returnMagazine();
+        Book book = context.getBean("book", Book.class);
+//        schoolLibrary.getBook();
+        uniLibrary.getBook(book);
+//        uniLibrary.getMagazine();
+//        uniLibrary.returnMagazine();
         context.close();
     }
 }

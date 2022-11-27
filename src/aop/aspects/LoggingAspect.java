@@ -1,4 +1,4 @@
-package aop.aspect;
+package aop.aspects;
 
 
 import org.aspectj.lang.annotation.Aspect;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LoggingAspect {
 
-    @Before("execution(public void get*())")
+    @Before("execution(public void getBook(aop.beans.Book,..))")
     public void beforeGettingBookAdvice(){
         System.out.println("  >trying to getting some");
     }
