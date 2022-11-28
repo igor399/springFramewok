@@ -8,7 +8,7 @@ public class UniLibrary extends AbstractLibrary {
 
     //    @Override
     public void getBook() {
-        System.out.println("we getting book from UniLibrary ->");
+        System.out.println("we getting book from UniLibrary");
     }
 
     public void returnBook() {

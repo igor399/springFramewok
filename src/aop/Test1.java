@@ -15,7 +15,7 @@ public class Test1 {
 //        schoolLibrary.getBook();
         uniLibrary.getBook();
         uniLibrary.getMagazine();
-        uniLibrary.returnBook();
+//        uniLibrary.returnBook();
 //        uniLibrary.returnMagazine();
         context.close();
     }
