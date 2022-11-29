@@ -1,14 +1,42 @@
 package aop.aspects;
 
 
+import aop.beans.Book;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
 public class LoggingAspect {
+
+
+    @Before("aop.aspects.MyPointcut.allAddMethods()")
+    public void beforeGettingLoggingAdvice(JoinPoint joinPoint) {
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+        System.out.println(methodSignature);
+        System.out.println(methodSignature.getMethod());
+        System.out.println(methodSignature.getReturnType());
+        System.out.println(methodSignature.getName());
+
+        if (methodSignature.getName().equals("addBook")) {
+            Object[] arguments = joinPoint.getArgs();
+            for (Object obj : arguments) {
+                if (obj instanceof Book) {
+                    Book myBook = (Book) obj;
+                    System.out.println("Name " + myBook.getName() + " Author " + myBook.getAuthor() + " Year " + myBook.getYearOfPub());
+                } else if (obj instanceof String) {
+                    System.out.println("book adding to lib " + obj);
+                }
+            }
+        }
+        System.out.println("  >trying to getting some");
+        System.out.println("______________________________________");
+    }
+
 
 
 //    @Pointcut("execution(* aop.beans.UniLibrary.get*())")
@@ -60,5 +88,4 @@ public class LoggingAspect {
 //    public void beforeGetAndReturnMethodsAdvice() {
 //        System.out.println("Log #3");
 //    }
-
 }

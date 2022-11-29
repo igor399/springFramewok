@@ -12,12 +12,7 @@ import org.springframework.stereotype.Component;
 @Order(2)
 public class MyPointcut {
 
-    @Pointcut("execution(* get*())")
-    public void allGetMethods() {
-    }
-
-    @Before("allGetMethods()")
-    public void beforeGettingLoggingAdvice() {
-        System.out.println("  >trying to getting some");
+    @Pointcut("execution(* add*(..))")
+    public void allAddMethods() {
     }
 }
