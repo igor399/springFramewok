@@ -13,6 +13,7 @@ public class UniLibrary extends AbstractLibrary {
     }
 
     public String returnBook() {
+        int bb = 10 / 0;
         System.out.println("we return book from UniLibrary");
         return "Billy Bob backers";
     }

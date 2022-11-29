@@ -12,10 +12,14 @@ public class NewLoggingAspect {
     @Around("execution(public String returnBook())")
     public Object aroundReturnBook(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("aroundReturnBook: trying to returning book to the lib ");
-        long begin = System.currentTimeMillis();
-        Object targetMethRes = proceedingJoinPoint.proceed();
-        long end = System.currentTimeMillis();
-        System.out.println(end - begin);
+        Object targetMethRes = null;
+        try {
+            targetMethRes = proceedingJoinPoint.proceed();
+        } catch (Exception e) {
+            System.out.println("exception was caught " + e);
+          throw new ArithmeticException();
+        }
+
         System.out.println("aroundReturnBook: OK ");
         return targetMethRes;
     }
