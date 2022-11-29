@@ -18,8 +18,13 @@ public class University {
         students.add(student3);
     }
 
-    public List<Student> getStudents(){
-        System.out.println(students);
+    public List<Student> getStudents() {
+        try {
+           Student st =  students.get(1321);
+            System.out.println(st);
+        } catch (Exception e) {
+            System.out.println("safasf" + e);
+        }
         return students;
     }
 
