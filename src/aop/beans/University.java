@@ -19,12 +19,8 @@ public class University {
     }
 
     public List<Student> getStudents() {
-        try {
            Student st =  students.get(1321);
             System.out.println(st);
-        } catch (Exception e) {
-            System.out.println("safasf" + e);
-        }
         return students;
     }
 
