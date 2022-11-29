@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Order(2)
 public class MyPointcut {
 
-    @Pointcut("execution(* add*(..))")
+    @Pointcut("execution(* assd*(..))")
     public void allAddMethods() {
     }
 }
