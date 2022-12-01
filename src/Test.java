@@ -13,7 +13,11 @@ public class Test {
         try {
             Session session = sessionFactory.getCurrentSession();
 
-            Employee employee = new Employee("Igor", "Ch", "IT", 999);
+            Employee employee = new Employee(
+                    "Igor",
+                    "Ch",
+                    "IT",
+                    999);
 
             session.beginTransaction();
 
