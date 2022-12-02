@@ -1,3 +1,5 @@
+package hibernate.test;
+
 import hibernate.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -1,11 +1,12 @@
+package hibernate.test;
+
 import hibernate.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.util.List;
 
-public class Test2 {
+public class Test4 {
     public static void main(String[] args) {
 
         try (SessionFactory sessionFactory = new Configuration()
@@ -15,16 +16,8 @@ public class Test2 {
 
             Session session = sessionFactory.getCurrentSession();
             session.beginTransaction();
+            session.createQuery("delete Employee where id = 17").executeUpdate();
 
-//            List<Employee> employees = session.createQuery("from Employee")
-//                    .getResultList();
-
-            List<Employee> employees = session.createQuery("from Employee where " +
-                    "name='Igor' and salary > 9000")
-                    .getResultList();
-
-            for (Employee employee : employees)
-                System.out.println(employee);
             session.getTransaction().commit();
         }
     }
