@@ -16,21 +16,21 @@ public class Test {
                 .buildSessionFactory();
              Session session = factory.getCurrentSession()) {
 
-//            Section section1 = new Section("Tennis");
-//            Section section2 = new Section("Chess");
-//            Section section3 = new Section("Swimming");
-
-//            Child child = new Child("Andrew", 15);
-
-//            child.addSections(section1);
-//            child.addSections(section2);
-//            child.addSections(section3);
-
+//            Section section1 = new Section("Football");
+//
+//            Child child = new Child("Peotr", 11);
+//            Child child1 = new Child("Vasya", 3);
+//            Child child2 = new Child("Jana", 4);
+//            section1.addChildren(child);
+//            section1.addChildren(child1);
+//            section1.addChildren(child2);
 
             session.beginTransaction();
-            Child child = session.get(Child.class, 4);
-            System.out.println(child);
-            System.out.println(child.getSections());
+
+            Child ch = session.get(Child.class,4);
+            session.delete(ch);
+
+
             session.getTransaction().commit();
 
         }
