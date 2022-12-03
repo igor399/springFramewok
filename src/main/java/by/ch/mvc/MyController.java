@@ -3,6 +3,7 @@ package by.ch.mvc;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -24,9 +25,18 @@ public class MyController {
 //        return "show-details";
 //    }
 
+//    @RequestMapping("/showDetails")
+//    public String showShowDetails(HttpServletRequest request, Model model) {
+//        model.addAttribute("attribute", "Mr. " + request.getParameter("employeeName"));
+//        model.addAttribute("description", "<-- sobaka");
+//        return "show-details";
+//    }
+
     @RequestMapping("/showDetails")
-    public String showShowDetails(HttpServletRequest request, Model model) {
-        model.addAttribute("attribute", "Mr. " + request.getParameter("employeeName"));
+    public String showShowDetails(@RequestParam("employeeName") String empName,
+                                  Model model) {
+        empName = "Mr. " + empName;
+        model.addAttribute("attribute", empName);
         model.addAttribute("description", "<-- sobaka");
         return "show-details";
     }
