@@ -1,11 +1,12 @@
-package by.ch.mvc;
+package by.ch.mvc.controllers;
 
+import by.ch.mvc.beans.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/emp")
@@ -17,7 +18,8 @@ public class MyController {
     }
 
     @RequestMapping("/askDetails")
-    public String askDetails() {
+    public String askDetails(Model model) {
+        model.addAttribute("employee", new Employee());
         return "ask-emp-details";
     }
 
@@ -34,11 +36,13 @@ public class MyController {
 //    }
 
     @RequestMapping("/showDetails")
-    public String showShowDetails(@RequestParam("employeeName") String empName,
-                                  Model model) {
-        empName = "Mr. " + empName;
-        model.addAttribute("attribute", empName);
-        model.addAttribute("description", "<-- sobaka");
+    public String showShowDetails(@ModelAttribute("employee") Employee employee) {
+        String name = employee.getName();
+        employee.setName("Sobaka " + name);
+        String surname = employee.getSurname();
+        employee.setSurname("Peos " + surname);
+        int salary = employee.getSalary();
+        employee.setSalary(salary + 1);
         return "show-details";
     }
 }
