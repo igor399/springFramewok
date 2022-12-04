@@ -1,5 +1,6 @@
 package by.ch.mvc.beans;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +12,8 @@ public class Employee {
     private Map<String, String> departments;
     private String bikeBrand;
     private Map<String, String> bikeBrands;
-
+    private String[] languages;
+    private Map<String, String> langs;
 
     public Employee() {
         departments = new HashMap<>();
@@ -23,6 +25,11 @@ public class Employee {
         bikeBrands.put("Trek", "TR");
         bikeBrands.put("Canondale", "Cd");
         bikeBrands.put("Cube", "Cb");
+
+        langs=new HashMap<>();
+        langs.put("Belaruisian","BEL");
+        langs.put("English","EN");
+        langs.put("Deutch","DE" );
     }
 
     public String getBikeBrand() {
@@ -81,13 +88,33 @@ public class Employee {
         this.department = department;
     }
 
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
+    }
+
+    public Map<String, String> getLangs() {
+        return langs;
+    }
+
+    public void setLangs(Map<String, String> langs) {
+        this.langs = langs;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", salary=" + salary +
+                ", department='" + department + '\'' +
                 ", departments=" + departments +
+                ", bikeBrand='" + bikeBrand + '\'' +
+                ", bikeBrands=" + bikeBrands +
+                ", languages=" + Arrays.toString(languages) +
                 '}';
     }
 }

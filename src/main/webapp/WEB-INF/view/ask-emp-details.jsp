@@ -17,6 +17,9 @@
     <br><br>
     Chose your bike:
     <form:radiobuttons path="bikeBrand" items="${employee.bikeBrands}"/>
+    <br><br>
+    Lang's:
+    <form:checkboxes path="languages" items="${employee.langs}"/>
     <input type="submit" value="OK">
 </form:form>
 </body>
