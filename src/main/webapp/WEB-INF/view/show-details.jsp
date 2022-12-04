@@ -9,5 +9,7 @@ Name: ${employee.name}
 Surname: ${employee.surname}
 <br><br><br>
 Salary: ${employee.salary}
+<br><br><br>
+Department: ${employee.department}
 </body>
 </html>
