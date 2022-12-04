@@ -1,18 +1,37 @@
 package by.ch.mvc.beans;
 
+
+
+import javax.validation.constraints.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
+    @NotBlank(message = "req field!")
+    @Size(min = 2, max = 15, message = "name must be min 2 characters")
     private String name;
+
+
+    @NotBlank(message = "req field!")
+    @Size(min = 1, max = 33, message = "surname must be min 2 characters")
     private String surname;
+
+
+    @Min(value = 100, message = "salary min 100$")
+    @Max(value = 10000, message = "salary max 10_000$")
     private int salary;
+
     private String department;
+
     private Map<String, String> departments;
+
     private String bikeBrand;
+
     private Map<String, String> bikeBrands;
+
     private String[] languages;
+
     private Map<String, String> langs;
 
     public Employee() {
@@ -26,10 +45,10 @@ public class Employee {
         bikeBrands.put("Canondale", "Cd");
         bikeBrands.put("Cube", "Cb");
 
-        langs=new HashMap<>();
-        langs.put("Belaruisian","BEL");
-        langs.put("English","EN");
-        langs.put("Deutch","DE" );
+        langs = new HashMap<>();
+        langs.put("Belaruisian", "BEL");
+        langs.put("English", "EN");
+        langs.put("Deutch", "DE");
     }
 
     public String getBikeBrand() {
