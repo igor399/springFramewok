@@ -14,11 +14,13 @@
     Salary <form:input path="salary"/>
     <form:errors path="salary"/>
     <br><br>
+    Email <form:input path="email"/>
+    <form:errors path="email"/>
+    <br><br>
     Department -> <form:select path="department">
     <form:options items="${employee.departments}"/>
     <form:errors path="department"/>
 </form:select>
-
     <br><br>
     Chose your bike:
     <form:radiobuttons path="bikeBrand" items="${employee.bikeBrands}"/>

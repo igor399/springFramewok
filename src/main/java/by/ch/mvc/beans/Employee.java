@@ -1,6 +1,7 @@
 package by.ch.mvc.beans;
 
 
+import by.ch.mvc.validations.CheckEmail;
 
 import javax.validation.constraints.*;
 import java.util.Arrays;
@@ -33,6 +34,10 @@ public class Employee {
     private String[] languages;
 
     private Map<String, String> langs;
+
+
+    @CheckEmail(value = "gmail.com", message = "email must ends gmail.com")
+    private String email;
 
     public Employee() {
         departments = new HashMap<>();
@@ -121,6 +126,14 @@ public class Employee {
 
     public void setLangs(Map<String, String> langs) {
         this.langs = langs;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
