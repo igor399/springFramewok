@@ -9,6 +9,8 @@ public class Employee {
     private int salary;
     private String department;
     private Map<String, String> departments;
+    private String bikeBrand;
+    private Map<String, String> bikeBrands;
 
 
     public Employee() {
@@ -16,6 +18,27 @@ public class Employee {
         departments.put("Cyber Slavyane", "CS");
         departments.put("Noob Programmers", "NP");
         departments.put("Horny HR's", "HHR");
+
+        bikeBrands = new HashMap<>();
+        bikeBrands.put("Trek", "TR");
+        bikeBrands.put("Canondale", "Cd");
+        bikeBrands.put("Cube", "Cb");
+    }
+
+    public String getBikeBrand() {
+        return bikeBrand;
+    }
+
+    public void setBikeBrand(String bikeBrand) {
+        this.bikeBrand = bikeBrand;
+    }
+
+    public Map<String, String> getBikeBrands() {
+        return bikeBrands;
+    }
+
+    public void setBikeBrands(Map<String, String> bikeBrands) {
+        this.bikeBrands = bikeBrands;
     }
 
     public String getName() {

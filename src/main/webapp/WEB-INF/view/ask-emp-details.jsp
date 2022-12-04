@@ -14,9 +14,10 @@
     Department -> <form:select path="department">
     <form:options items="${employee.departments}"/>
 </form:select>
+    <br><br>
+    Chose your bike:
+    <form:radiobuttons path="bikeBrand" items="${employee.bikeBrands}"/>
     <input type="submit" value="OK">
 </form:form>
-
-
 </body>
 </html>
