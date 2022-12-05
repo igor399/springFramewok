@@ -21,5 +21,8 @@
         </tr>
     </c:forEach>
 </table>
+<br><br>
+<input type="button" value="add" onclick="window.location.href='addNewEmployee'">
+
 </body>
 </html>
