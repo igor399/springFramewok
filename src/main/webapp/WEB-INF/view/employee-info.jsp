@@ -6,13 +6,15 @@
 
 <form:form action="saveEmployee" modelAttribute="employee">
 
-    Name  <form:input path="name"/>
+    <form:hidden path="id"/>
+
+    Name <form:input path="name"/>
     <br><br>
-    Surname  <form:input path="surname"/>
+    Surname <form:input path="surname"/>
     <br><br>
-    Department  <form:input path="department"/>
+    Department <form:input path="department"/>
     <br><br>
-    Salary  <form:input path="salary"/>
+    Salary <form:input path="salary"/>
 
     <input type="submit" value="OK">
 
