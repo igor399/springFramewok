@@ -1,6 +1,7 @@
 package by.ch.spring.rest.controller;
 
 import by.ch.spring.rest.entity.Employee;
+import by.ch.spring.rest.exception_handler.NoSuchEmployeeException;
 import by.ch.spring.rest.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -24,8 +25,12 @@ public class Controller {
     @GetMapping("/employees/{id}")
     public Employee getEmployee(@PathVariable int id) {
         Employee employee = employeeService.getEmployee(id);
+        if (employee == null) {
+            throw new NoSuchEmployeeException("NO EMPLOYEE WITH ID " + id + " IN DB");
+        }
         return employee;
     }
+
 
 
 }
