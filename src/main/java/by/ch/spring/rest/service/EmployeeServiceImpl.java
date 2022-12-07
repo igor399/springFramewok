@@ -1,7 +1,7 @@
-package by.ch.spring.service;
+package by.ch.spring.rest.service;
 
-import by.ch.spring.dao.EmployeeDAO;
-import by.ch.spring.entity.Employee;
+import by.ch.spring.rest.dao.EmployeeDAO;
+import by.ch.spring.rest.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

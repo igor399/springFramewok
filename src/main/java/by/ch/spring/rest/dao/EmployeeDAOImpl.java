@@ -1,6 +1,6 @@
-package by.ch.spring.dao;
+package by.ch.spring.rest.dao;
 
-import by.ch.spring.entity.Employee;
+import by.ch.spring.rest.entity.Employee;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

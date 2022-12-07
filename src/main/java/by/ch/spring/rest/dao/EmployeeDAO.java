@@ -1,10 +1,10 @@
-package by.ch.spring.service;
+package by.ch.spring.rest.dao;
 
-import by.ch.spring.entity.Employee;
+import by.ch.spring.rest.entity.Employee;
 
 import java.util.List;
 
-public interface EmployeeService {
+public interface EmployeeDAO {
 
     public List<Employee> getEmployees();
 

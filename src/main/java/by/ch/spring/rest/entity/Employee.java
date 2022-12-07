@@ -1,4 +1,4 @@
-package by.ch.spring.entity;
+package by.ch.spring.rest.entity;
 
 import javax.persistence.*;
 
