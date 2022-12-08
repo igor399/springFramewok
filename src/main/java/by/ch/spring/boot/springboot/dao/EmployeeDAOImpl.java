@@ -1,13 +1,12 @@
 package by.ch.spring.boot.springboot.dao;
 
-
 import by.ch.spring.boot.springboot.entity.Employee;
-import jakarta.persistence.EntityManager;
-import org.hibernate.Session;
 
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 
