@@ -1,43 +1,51 @@
 package by.ch.spring.boot.springboot.service;
 
 
-import by.ch.spring.boot.springboot.dao.EmployeeDAO;
+import by.ch.spring.boot.springboot.dao.EmployeeRepository;
 import by.ch.spring.boot.springboot.entity.Employee;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
-    private EmployeeDAO employeeDAO;
+    private EmployeeRepository employeeRepository;
 
     @Override
-    @Transactional
+
     public List<Employee> getEmployees() {
-        return employeeDAO.getEmployees();
+        return employeeRepository.findAll();
     }
 
     @Override
-    @Transactional
     public void saveEmployee(Employee employee) {
-        employeeDAO.saveEmployee(employee);
+        employeeRepository.save(employee);
     }
 
     @Override
-    @Transactional
     public Employee getEmployee(int id) {
-        return employeeDAO.getEmployee(id);
+        Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+        Employee employee = null;
+        if (optionalEmployee.isPresent()) {
+            employee = optionalEmployee.get();
+        }
+        return employee;
     }
 
     @Override
-    @Transactional
     public void deleteEmployee(int id) {
-        employeeDAO.deleteEmployee(id);
+        employeeRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Employee> findEmployeesByDepartment(String dep) {
+        List<Employee> employees = employeeRepository.findEmployeesByDepartment(dep);
+        return employees;
     }
 }
