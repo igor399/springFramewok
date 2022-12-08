@@ -1,4 +1,4 @@
-package by.ch.spring.boot.springboot.dao;
+package by.ch.spring.boot.springboot.repository;
 
 import by.ch.spring.boot.springboot.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
